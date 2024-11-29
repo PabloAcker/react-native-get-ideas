@@ -63,7 +63,9 @@ jobs:
           bundle install --jobs 4 --retry 3
 
       - name: Install fastfile dependencies
-        run: fastlane add_plugin firebase_app_distribution
+        run: |
+          cd android 
+          fastlane add_plugin firebase_app_distribution
 
       - name: Distribute app with 🔥 App Distribution 🚀
         env:
